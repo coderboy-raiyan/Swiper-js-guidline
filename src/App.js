@@ -7,6 +7,19 @@ import "./App.css";
 
 SwiperCore.use([EffectCoverflow, Autoplay, Pagination]);
 
+// if you want to use array
+const slide_img = [
+  "https://swiperjs.com/demos/images/nature-1.jpg",
+  "https://swiperjs.com/demos/images/nature-2.jpg",
+  "https://swiperjs.com/demos/images/nature-3.jpg",
+  "https://swiperjs.com/demos/images/nature-4.jpg",
+  "https://swiperjs.com/demos/images/nature-5.jpg",
+  "https://swiperjs.com/demos/images/nature-6.jpg",
+  "https://swiperjs.com/demos/images/nature-7.jpg",
+  "https://swiperjs.com/demos/images/nature-8.jpg",
+  "https://swiperjs.com/demos/images/nature-9.jpg",
+];
+
 const App = () => {
   return (
     <div className="main-swiper">
@@ -29,7 +42,18 @@ const App = () => {
         pagination={true}
         className="mySwiper"
       >
-        <SwiperSlide>
+        {/* using array */}
+        {slide_img.map((img, i) => {
+          return (
+            <SwiperSlide key={i}>
+              <img src={img} alt="" />
+            </SwiperSlide>
+          );
+        })}
+
+        {/* or use normally  */}
+
+        {/* <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
@@ -55,7 +79,7 @@ const App = () => {
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-9.jpg" alt="" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );
