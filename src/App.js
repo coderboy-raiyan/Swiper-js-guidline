@@ -1,17 +1,21 @@
 import React from "react";
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import SwiperCore, { Autoplay, EffectCoverflow, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./App.css";
 
-SwiperCore.use([EffectCoverflow, Pagination]);
+SwiperCore.use([EffectCoverflow, Autoplay, Pagination]);
 
 const App = () => {
   return (
     <div className="main-swiper">
       <Swiper
         effect={"coverflow"}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={"auto"}
@@ -20,7 +24,7 @@ const App = () => {
           stretch: 0,
           depth: 100,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
         }}
         pagination={true}
         className="mySwiper"
