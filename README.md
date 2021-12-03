@@ -103,11 +103,11 @@ export default App;
 ### Include CSS
 
 ```css
-/* And You have to copy these codes from here ,Create a CSS file and paste it and import the file */
+/* At last you have to copy these css styles from here ,Create a CSS file and paste it and import the file */
 
 /* Also you can customize these css styles*/
 
-/* In my example, I use these CSS styles in my App.css*/
+/* In my case, I use these CSS styles in my App.css file*/
 .swiper {
   width: 100%;
   padding-top: 50px;
